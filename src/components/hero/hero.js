@@ -7,22 +7,16 @@ import {
   HeroText,
   ButtonWrapper,
   HeroButton,
-} from "./heroStyles";
+} from "./HeroStyles";
 
 const Hero = () => {
   return (
     <HeroSection>
-      <HeroVideo
-        controls
-        loop
-        src="./assets/hero.mp4"
-        autoPlay
-        muted
-      ></HeroVideo>
+      <HeroVideo src="./assets/hero.mp4" autoPlay muted />
       <Container>
         <MainHeading>Your data is secure with us</MainHeading>
         <HeroText>
-          We provide the best security systems for clients all over the world!
+          We provide the best security systems for clients all over the world
         </HeroText>
         <ButtonWrapper>
           <Link to="signup">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTimes } from "react/icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { CgMenuRight } from "react-icons/cg";
 import { IconContext } from "react-icons";
 import {
@@ -13,7 +13,7 @@ import {
   NavItem,
 } from "./NavbarStyles.js";
 import { useLocation, useHistory } from "react-router-dom";
-import { data } from "../../data/NavbarData/NavbarData.js";
+import { data } from "../../data/NavbarData";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -47,21 +47,20 @@ const Navbar = () => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">
-            <NavIcon src="./assets/logo.png" alt="logo">
-              Delta
-            </NavIcon>
+            <NavIcon src="./assets/logo.png" alt="logo" />
+            Delta
           </NavLogo>
           <MobileIcon onClick={handleClick}>
             {show ? <FaTimes /> : <CgMenuRight />}
           </MobileIcon>
-          <NavMenu>
-            {data.map((el, index) => {
+          <NavMenu show={show}>
+            {data.map((el, index) => (
               <NavItem key={index}>
                 <NavLinks onClick={() => closeMobileMenu(el.to, el.id)}>
                   {el.text}
                 </NavLinks>
-              </NavItem>;
-            })}
+              </NavItem>
+            ))}
           </NavMenu>
         </NavbarContainer>
       </Nav>

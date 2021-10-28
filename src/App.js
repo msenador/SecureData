@@ -1,26 +1,25 @@
 import React from "react";
 import GlobalStyle from "./globalStyles";
-import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SignupPage from "./pages/SignupPage";
-import PricingPage from "./pages/PricingPage";
+import Navbar from "./components/navbar/Navbar";
+
+//Pages
+import Home from "./pages/Home";
+import SignUp from "./pages/SignupPage";
+import Pricing from "./pages/PricingPage";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <Router className="App">
+    <Router>
       <GlobalStyle />
-
+      <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/signup">
-          <SignupPage />
-        </Route>
-        <Route path="/pricingpage">
-          <PricingPage />
-        </Route>
+        <Route path="/" exact component={Home} />
+        <Route path="/signup" exact component={SignUp} />
+        <Route path="/pricing" exact component={Pricing} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

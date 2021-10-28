@@ -22,7 +22,7 @@ export const HeroVideo = styled.video`
 export const HeroText = styled.p`
   margin-bottom: 35px;
   font-size: clamp(0.9rem, 1.5vw, 1.3rem);
-  line-heght: 24px;
+  line-height: 24px;
   text-align: center;
   letter-spacing: 2px;
   color: #fff;
@@ -38,16 +38,13 @@ export const ButtonWrapper = styled.div`
 
 export const HeroButton = styled(Button)`
   color: black;
-
   &:before {
     background: #fff;
     height: 500%;
   }
-
   &:hover:before {
     height: 0%;
   }
-
   &:hover {
     color: white;
   }
